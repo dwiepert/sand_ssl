@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/launch.json
+.vscode/settings.json
+*.pyc
+/task1_test
+/task1_train
+/temp_out
+/training1
+test.py
+test.py
