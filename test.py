@@ -4,11 +4,13 @@ from sand_ssl.models import Extractor, Model
 from torch.utils.data import DataLoader
 from sand_ssl.training import Trainer
 import torch
+import os
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--audio_dir', type=str, default='task1_train/training')
-parser.add_argument('--spreadsheet_path', type=str, default='task1_train/sand_task_1.xlsx')
-parser.add_argument('--metadata_path', type=str, default='task1_train/task1_metadata.csv')
+parser.add_argument('--data_dir', type=str, default='task1_train')
+parser.add_argument('--audio_dir', type=str, default='training')
+parser.add_argument('--spreadsheet_path', type=str, default='sand_task_1.xlsx')
+parser.add_argument('--metadata_path', type=str, default='task1_metadata.csv')
 parser.add_argument('--epochs', type=int, default=50)
 parser.add_argument('--debug', action='store_true')
 parser.add_argument('--model_type', type=str, default="wavlm-large")
@@ -16,6 +18,9 @@ parser.add_argument('--batch_sz', type=int, default=2)
 parser.add_argument('--output_path', type=str, default='sand_challenge')
 args = parser.parse_args()
 
+args.audio_dir = os.path.join(args.data_dir, args.audio_dir)
+args.spreadsheet_path = os.path.join(args.data_dir, args.spreadsheet_path)
+args.metadata_path = os.path.join(args.data_dir, args.metadata_path)
 print(f'CUDA available: {torch.cuda.is_available()}')
 training_data = CustomDataset(audio_dir=args.audio_dir, spreadsheet_path=args.spreadsheet_path, metadata_path=args.metadata_path, data_type='training', debug=args.debug)
 validation_data = CustomDataset(audio_dir=args.audio_dir, spreadsheet_path=args.spreadsheet_path, metadata_path=args.metadata_path, data_type='validation', debug=args.debug)
