@@ -28,6 +28,6 @@ val_loader = DataLoader(dataset=validation_data,batch_size=args.batch_sz, shuffl
 #test_loader = DataLoader(dataset=testing_data, batch_size=batch_sz, shuffle=False, collate_fn=collate_fn, num_workers=0)
 
 model = Model(model_type)
-trainer = Trainer(model)
+trainer = Trainer(model, scheduler_type='cosine', early_stop=True)
 trainer.fit(train_loader=train_loader, out_dir=args.output_path, epochs=args.epochs)
 trainer.test(val_loader, args.output_path)
