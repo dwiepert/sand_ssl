@@ -181,7 +181,6 @@ class Trainer():
     def _generate_save_name(self):
         """
         """
-        print('pause')
         #MODEL COMPONENT
         self.name_prefix = self.model.get_model_name()
         
