@@ -2,11 +2,11 @@
 REPO_URL="https://github.com/dwiepert/sand_ssl.git"
 REPO_DIR="sand_ssl"
 PYTHON_SCRIPT="test.py"
-DATA_FOLDER="~/Documents/task1_train"
-EPOCHS="50"
+DATA_FOLDER="/u/dwiepert/Documents/task1_train"
+EPOCHS="1"
 BATCH_SZ="2"
 MODEL_TYPE="wavlm-large"
-OUTPUT_FOLDER="~/Documents/sand_results"
+OUTPUT_FOLDER="/u/dwiepert/Documents/sand_results"
 
 #clone repo
 git clone "$REPO_URL"

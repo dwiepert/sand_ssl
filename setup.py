@@ -5,9 +5,9 @@ setup(
     name = 'sand_ssl.py',
     packages = find_packages(),
     author = 'Daniela Wiepert',
-    python_requires='>=3.10',
+    python_requires='>=3.8',
     install_requires=[
-       "huggingface-hub==0.35.3",
+      "huggingface-hub==0.35.3",
       "librosa==0.11.0",
       "numpy==2.2.6",
       "openpyxl==3.1.5",
