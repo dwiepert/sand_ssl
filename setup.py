@@ -14,11 +14,11 @@ setup(
       "pandas",
       "scikit-learn",
       "scipy",
-      "torch==2.8.0",
-      "torchaudio==2.8.0",
-      "torchvision==0.23.0",
+      "torch",
+      "torchaudio",
+      "torchvision",
       "tqdm",
-      "transformers==4.57.0"
+      "transformers"
     ],
     include_package_data=False,
     version = __version__
