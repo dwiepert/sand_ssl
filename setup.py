@@ -9,9 +9,9 @@ setup(
     install_requires=[
       "huggingface-hub==0.35.3",
       "librosa==0.11.0",
-      "numpy==2.2.6",
-      "openpyxl==3.1.5",
-      "pandas==2.3.3",
+      "numpy",
+      "openpyxl",
+      "pandas",
       "scikit-learn==1.7.2",
       "scipy==1.15.3",
       "torch==2.8.0",
